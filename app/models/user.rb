@@ -9,7 +9,7 @@ class User < ActiveRecord::Base
   validates :last_name, presence: true
   validates :profile_name, presence: true, uniqueness: true, format: {
     with: /\A[a-zA-Z0-9_-]+\z/, 
-    message: 'Must be formatted correctly.'
+    message: 'Username must be at least 8 characters, with no spaces.'
     }
   
   has_many :statuses
